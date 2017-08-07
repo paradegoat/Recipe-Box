@@ -1,0 +1,13 @@
+
+<h1>Recipe Box</h1>
+
+<% @recipe.each_slice(3) do |recipes| %>
+
+  <% recipes.each do |recipe| %>
+    <%= link_to recipe do %>
+      <%= image_tag recipe.image.url(:medium) %>
+      <% end %>
+      <h2><%= link_to recipe.title, recipe %></h2>
+  <% end %>
+<% end %>
+<%= link_to 'New Recipe', new_recipe_path, class:"btn-margin btn btn-primary" %>
